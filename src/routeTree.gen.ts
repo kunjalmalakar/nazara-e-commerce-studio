@@ -10,15 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
+import { Route as RingSizeGuideRouteImport } from './routes/ring-size-guide'
+import { Route as ReturnRefundPolicyRouteImport } from './routes/return-refund-policy'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as ExchangePolicyRouteImport } from './routes/exchange-policy'
 import { Route as CustomizeRouteImport } from './routes/customize'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as CartRouteImport } from './routes/cart'
+import { Route as BangleSizeGuideRouteImport } from './routes/bangle-size-guide'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
+import { Route as OrderStatusStatusRouteImport } from './routes/order-status.$status'
 import { Route as CategorySlugRouteImport } from './routes/category.$slug'
 
 const WishlistRoute = WishlistRouteImport.update({
@@ -26,14 +35,49 @@ const WishlistRoute = WishlistRouteImport.update({
   path: '/wishlist',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingPolicyRoute = ShippingPolicyRouteImport.update({
+  id: '/shipping-policy',
+  path: '/shipping-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RingSizeGuideRoute = RingSizeGuideRouteImport.update({
+  id: '/ring-size-guide',
+  path: '/ring-size-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReturnRefundPolicyRoute = ReturnRefundPolicyRouteImport.update({
+  id: '/return-refund-policy',
+  path: '/return-refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExchangePolicyRoute = ExchangePolicyRouteImport.update({
+  id: '/exchange-policy',
+  path: '/exchange-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomizeRoute = CustomizeRouteImport.update({
@@ -49,6 +93,11 @@ const ContactUsRoute = ContactUsRouteImport.update({
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BangleSizeGuideRoute = BangleSizeGuideRouteImport.update({
+  id: '/bangle-size-guide',
+  path: '/bangle-size-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountRoute = AccountRouteImport.update({
@@ -71,6 +120,11 @@ const ProductSlugRoute = ProductSlugRouteImport.update({
   path: '/product/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrderStatusStatusRoute = OrderStatusStatusRouteImport.update({
+  id: '/order-status/$status',
+  path: '/order-status/$status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategorySlugRoute = CategorySlugRouteImport.update({
   id: '/category/$slug',
   path: '/category/$slug',
@@ -81,26 +135,44 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
+  '/bangle-size-guide': typeof BangleSizeGuideRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
+  '/return-refund-policy': typeof ReturnRefundPolicyRoute
+  '/ring-size-guide': typeof RingSizeGuideRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
+  '/bangle-size-guide': typeof BangleSizeGuideRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
+  '/return-refund-policy': typeof ReturnRefundPolicyRoute
+  '/ring-size-guide': typeof RingSizeGuideRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRoutesById {
@@ -108,13 +180,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
+  '/bangle-size-guide': typeof BangleSizeGuideRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
+  '/return-refund-policy': typeof ReturnRefundPolicyRoute
+  '/ring-size-guide': typeof RingSizeGuideRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
 }
 export interface FileRouteTypes {
@@ -123,39 +204,66 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/account'
+    | '/bangle-size-guide'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/exchange-policy'
     | '/faqs'
+    | '/privacy-policy'
     | '/products'
+    | '/return-refund-policy'
+    | '/ring-size-guide'
+    | '/shipping-policy'
+    | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/wishlist'
     | '/category/$slug'
+    | '/order-status/$status'
     | '/product/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about-us'
     | '/account'
+    | '/bangle-size-guide'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/exchange-policy'
     | '/faqs'
+    | '/privacy-policy'
     | '/products'
+    | '/return-refund-policy'
+    | '/ring-size-guide'
+    | '/shipping-policy'
+    | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/wishlist'
     | '/category/$slug'
+    | '/order-status/$status'
     | '/product/$slug'
   id:
     | '__root__'
     | '/'
     | '/about-us'
     | '/account'
+    | '/bangle-size-guide'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/exchange-policy'
     | '/faqs'
+    | '/privacy-policy'
     | '/products'
+    | '/return-refund-policy'
+    | '/ring-size-guide'
+    | '/shipping-policy'
+    | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/wishlist'
     | '/category/$slug'
+    | '/order-status/$status'
     | '/product/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -163,13 +271,22 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   AccountRoute: typeof AccountRoute
+  BangleSizeGuideRoute: typeof BangleSizeGuideRoute
   CartRoute: typeof CartRoute
   ContactUsRoute: typeof ContactUsRoute
   CustomizeRoute: typeof CustomizeRoute
+  ExchangePolicyRoute: typeof ExchangePolicyRoute
   FaqsRoute: typeof FaqsRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRoute
+  ReturnRefundPolicyRoute: typeof ReturnRefundPolicyRoute
+  RingSizeGuideRoute: typeof RingSizeGuideRoute
+  ShippingPolicyRoute: typeof ShippingPolicyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   WishlistRoute: typeof WishlistRoute
   CategorySlugRoute: typeof CategorySlugRoute
+  OrderStatusStatusRoute: typeof OrderStatusStatusRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
 
@@ -182,6 +299,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WishlistRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping-policy': {
+      id: '/shipping-policy'
+      path: '/shipping-policy'
+      fullPath: '/shipping-policy'
+      preLoaderRoute: typeof ShippingPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ring-size-guide': {
+      id: '/ring-size-guide'
+      path: '/ring-size-guide'
+      fullPath: '/ring-size-guide'
+      preLoaderRoute: typeof RingSizeGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/return-refund-policy': {
+      id: '/return-refund-policy'
+      path: '/return-refund-policy'
+      fullPath: '/return-refund-policy'
+      preLoaderRoute: typeof ReturnRefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products': {
       id: '/products'
       path: '/products'
@@ -189,11 +341,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exchange-policy': {
+      id: '/exchange-policy'
+      path: '/exchange-policy'
+      fullPath: '/exchange-policy'
+      preLoaderRoute: typeof ExchangePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/customize': {
@@ -215,6 +381,13 @@ declare module '@tanstack/react-router' {
       path: '/cart'
       fullPath: '/cart'
       preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bangle-size-guide': {
+      id: '/bangle-size-guide'
+      path: '/bangle-size-guide'
+      fullPath: '/bangle-size-guide'
+      preLoaderRoute: typeof BangleSizeGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account': {
@@ -245,6 +418,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/order-status/$status': {
+      id: '/order-status/$status'
+      path: '/order-status/$status'
+      fullPath: '/order-status/$status'
+      preLoaderRoute: typeof OrderStatusStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$slug': {
       id: '/category/$slug'
       path: '/category/$slug'
@@ -259,13 +439,22 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   AccountRoute: AccountRoute,
+  BangleSizeGuideRoute: BangleSizeGuideRoute,
   CartRoute: CartRoute,
   ContactUsRoute: ContactUsRoute,
   CustomizeRoute: CustomizeRoute,
+  ExchangePolicyRoute: ExchangePolicyRoute,
   FaqsRoute: FaqsRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRoute,
+  ReturnRefundPolicyRoute: ReturnRefundPolicyRoute,
+  RingSizeGuideRoute: RingSizeGuideRoute,
+  ShippingPolicyRoute: ShippingPolicyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   WishlistRoute: WishlistRoute,
   CategorySlugRoute: CategorySlugRoute,
+  OrderStatusStatusRoute: OrderStatusStatusRoute,
   ProductSlugRoute: ProductSlugRoute,
 }
 export const routeTree = rootRouteImport
