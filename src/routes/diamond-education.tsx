@@ -23,7 +23,7 @@ const fourCs = [
   { c: "Carat", desc: "The weight of the stone, not its size. Two diamonds of the same carat can look very different depending on cut." },
 ];
 
-export default function _unused() {}
+
 
 function DiamondEducation() {
   return (

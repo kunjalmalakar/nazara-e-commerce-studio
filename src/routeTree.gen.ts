@@ -19,9 +19,13 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ExchangePolicyRouteImport } from './routes/exchange-policy'
+import { Route as DiamondEducationRouteImport } from './routes/diamond-education'
 import { Route as CustomizeRouteImport } from './routes/customize'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as CartRouteImport } from './routes/cart'
+import { Route as BridalRouteImport } from './routes/bridal'
+import { Route as BookAppointmentRouteImport } from './routes/book-appointment'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BangleSizeGuideRouteImport } from './routes/bangle-size-guide'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutUsRouteImport } from './routes/about-us'
@@ -29,6 +33,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
 import { Route as OrderStatusStatusRouteImport } from './routes/order-status.$status'
 import { Route as CategorySlugRouteImport } from './routes/category.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const WishlistRoute = WishlistRouteImport.update({
   id: '/wishlist',
@@ -80,6 +85,11 @@ const ExchangePolicyRoute = ExchangePolicyRouteImport.update({
   path: '/exchange-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiamondEducationRoute = DiamondEducationRouteImport.update({
+  id: '/diamond-education',
+  path: '/diamond-education',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CustomizeRoute = CustomizeRouteImport.update({
   id: '/customize',
   path: '/customize',
@@ -93,6 +103,21 @@ const ContactUsRoute = ContactUsRouteImport.update({
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BridalRoute = BridalRouteImport.update({
+  id: '/bridal',
+  path: '/bridal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookAppointmentRoute = BookAppointmentRouteImport.update({
+  id: '/book-appointment',
+  path: '/book-appointment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BangleSizeGuideRoute = BangleSizeGuideRouteImport.update({
@@ -130,15 +155,24 @@ const CategorySlugRoute = CategorySlugRouteImport.update({
   path: '/category/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
   '/bangle-size-guide': typeof BangleSizeGuideRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/book-appointment': typeof BookAppointmentRoute
+  '/bridal': typeof BridalRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/diamond-education': typeof DiamondEducationRoute
   '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -149,6 +183,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
   '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -158,9 +193,13 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
   '/bangle-size-guide': typeof BangleSizeGuideRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/book-appointment': typeof BookAppointmentRoute
+  '/bridal': typeof BridalRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/diamond-education': typeof DiamondEducationRoute
   '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -171,6 +210,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
   '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -181,9 +221,13 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/account': typeof AccountRoute
   '/bangle-size-guide': typeof BangleSizeGuideRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/book-appointment': typeof BookAppointmentRoute
+  '/bridal': typeof BridalRoute
   '/cart': typeof CartRoute
   '/contact-us': typeof ContactUsRoute
   '/customize': typeof CustomizeRoute
+  '/diamond-education': typeof DiamondEducationRoute
   '/exchange-policy': typeof ExchangePolicyRoute
   '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -194,6 +238,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
   '/order-status/$status': typeof OrderStatusStatusRoute
   '/product/$slug': typeof ProductSlugRoute
@@ -205,9 +250,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/account'
     | '/bangle-size-guide'
+    | '/blog'
+    | '/book-appointment'
+    | '/bridal'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/diamond-education'
     | '/exchange-policy'
     | '/faqs'
     | '/privacy-policy'
@@ -218,6 +267,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$slug'
     | '/order-status/$status'
     | '/product/$slug'
@@ -227,9 +277,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/account'
     | '/bangle-size-guide'
+    | '/blog'
+    | '/book-appointment'
+    | '/bridal'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/diamond-education'
     | '/exchange-policy'
     | '/faqs'
     | '/privacy-policy'
@@ -240,6 +294,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$slug'
     | '/order-status/$status'
     | '/product/$slug'
@@ -249,9 +304,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/account'
     | '/bangle-size-guide'
+    | '/blog'
+    | '/book-appointment'
+    | '/bridal'
     | '/cart'
     | '/contact-us'
     | '/customize'
+    | '/diamond-education'
     | '/exchange-policy'
     | '/faqs'
     | '/privacy-policy'
@@ -262,6 +321,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$slug'
     | '/order-status/$status'
     | '/product/$slug'
@@ -272,9 +332,13 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   AccountRoute: typeof AccountRoute
   BangleSizeGuideRoute: typeof BangleSizeGuideRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  BookAppointmentRoute: typeof BookAppointmentRoute
+  BridalRoute: typeof BridalRoute
   CartRoute: typeof CartRoute
   ContactUsRoute: typeof ContactUsRoute
   CustomizeRoute: typeof CustomizeRoute
+  DiamondEducationRoute: typeof DiamondEducationRoute
   ExchangePolicyRoute: typeof ExchangePolicyRoute
   FaqsRoute: typeof FaqsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -362,6 +426,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExchangePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diamond-education': {
+      id: '/diamond-education'
+      path: '/diamond-education'
+      fullPath: '/diamond-education'
+      preLoaderRoute: typeof DiamondEducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/customize': {
       id: '/customize'
       path: '/customize'
@@ -381,6 +452,27 @@ declare module '@tanstack/react-router' {
       path: '/cart'
       fullPath: '/cart'
       preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bridal': {
+      id: '/bridal'
+      path: '/bridal'
+      fullPath: '/bridal'
+      preLoaderRoute: typeof BridalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-appointment': {
+      id: '/book-appointment'
+      path: '/book-appointment'
+      fullPath: '/book-appointment'
+      preLoaderRoute: typeof BookAppointmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bangle-size-guide': {
@@ -432,17 +524,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategorySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   AccountRoute: AccountRoute,
   BangleSizeGuideRoute: BangleSizeGuideRoute,
+  BlogRoute: BlogRouteWithChildren,
+  BookAppointmentRoute: BookAppointmentRoute,
+  BridalRoute: BridalRoute,
   CartRoute: CartRoute,
   ContactUsRoute: ContactUsRoute,
   CustomizeRoute: CustomizeRoute,
+  DiamondEducationRoute: DiamondEducationRoute,
   ExchangePolicyRoute: ExchangePolicyRoute,
   FaqsRoute: FaqsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
@@ -460,13 +573,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
