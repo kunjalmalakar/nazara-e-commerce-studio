@@ -1,10 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, Youtube } from "lucide-react";
+import { useState } from "react";
 
 const learn = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about-us" },
   { label: "Products", to: "/products" },
+  { label: "Bridal Edit", to: "/bridal" },
+  { label: "Journal", to: "/blog" },
+  { label: "Diamond Education", to: "/diamond-education" },
+  { label: "Book Appointment", to: "/book-appointment" },
   { label: "FAQs", to: "/faqs" },
   { label: "Wishlist", to: "/wishlist" },
   { label: "My Account", to: "/account" },
@@ -22,8 +27,39 @@ const policyLinks = [
 ];
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
   return (
     <footer className="bg-dark text-dark-foreground">
+      <div className="border-b border-dark-foreground/10">
+        <div className="container-site grid gap-6 py-10 md:grid-cols-[1.2fr_1fr] md:items-center">
+          <div>
+            <p className="font-display text-2xl text-gold">Join the Nazara list</p>
+            <p className="mt-1 text-sm text-dark-foreground/70">
+              First access to new collections, styling notes and private events.
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (email) setSubscribed(true);
+            }}
+            className="flex w-full items-center gap-2"
+          >
+            <input
+              required
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              className="w-full rounded-full border border-dark-foreground/20 bg-transparent px-5 py-3 text-sm text-dark-foreground placeholder:text-dark-foreground/50 focus:border-gold focus:outline-none"
+            />
+            <button type="submit" className="btn-gold shrink-0 whitespace-nowrap">
+              {subscribed ? "Subscribed" : "Subscribe"}
+            </button>
+          </form>
+        </div>
+      </div>
       <div className="container-site grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-display text-2xl font-bold text-gold">Nazara Diamonds</p>

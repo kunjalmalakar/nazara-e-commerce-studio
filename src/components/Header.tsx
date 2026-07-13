@@ -214,10 +214,15 @@ export function Header() {
             </div>
           </div>
 
+          <Link to="/bridal" className="py-2 transition-colors hover:text-gold">
+            Bridal
+          </Link>
           <Link to="/customize" className="py-2 transition-colors hover:text-gold">
             Customize
           </Link>
-        </nav>
+          <Link to="/blog" className="py-2 transition-colors hover:text-gold">
+            Journal
+          </Link>
 
         <div className="flex items-center gap-4">
           <button aria-label="Search" onClick={() => setSearchOpen(!searchOpen)} className="transition-colors hover:text-gold">
