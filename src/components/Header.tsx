@@ -287,7 +287,11 @@ export function Header() {
                 </Link>
               ))}
               <Link to="/category/$slug" params={{ slug: "earrings" }} className="rounded px-3 py-2.5 hover:bg-secondary">Earrings</Link>
+              <Link to="/bridal" className="rounded px-3 py-2.5 hover:bg-secondary">Bridal Edit</Link>
               <Link to="/customize" className="rounded px-3 py-2.5 hover:bg-secondary">Customize</Link>
+              <Link to="/blog" className="rounded px-3 py-2.5 hover:bg-secondary">Journal</Link>
+              <Link to="/diamond-education" className="rounded px-3 py-2.5 hover:bg-secondary">Diamond Education</Link>
+              <Link to="/book-appointment" className="rounded px-3 py-2.5 hover:bg-secondary">Book Appointment</Link>
               <Link to="/about-us" className="rounded px-3 py-2.5 hover:bg-secondary">About Us</Link>
               <Link to="/contact-us" className="rounded px-3 py-2.5 hover:bg-secondary">Contact Us</Link>
               <Link to="/faqs" className="rounded px-3 py-2.5 hover:bg-secondary">FAQs</Link>
